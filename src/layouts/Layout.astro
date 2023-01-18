@@ -1,0 +1,142 @@
+---
+import '../styles/global.css'
+
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--brown: rgb(213, 150, 108);
+		--black: rgb(21, 21, 21);
+		--grey: rgb(68, 68, 68);
+		--white: rgb(255, 255, 255);
+		--padding-xl: 2em;
+		/* --headings-font: ;
+		--body-font: ; */
+	}
+
+	.heading-xl {
+		font-size: 96px;
+		font-size: clamp(60px, 5vw, 96px);
+		line-height: 86px;
+	}
+
+	.heading-l {
+		font-size: 70px;
+		line-height: 70px;
+	}
+
+	.heading-m {
+		font-size: 60px;
+		line-height: 50px;
+	}
+
+	.heading-s {
+		font-size: 36px;
+		line-height: 36px;
+	}
+
+	.body-m {
+		font-size: 22px;
+		line-height: 32px;
+	}
+
+	.body-s {
+		font-size: 18px;
+		line-height: 28px;
+	}
+
+	html, body {
+    	height: 100%;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	button {
+		text-transform: uppercase;
+		border-style: none;
+	}
+	/* brown text */
+	.accent-text {
+		color: var(--brown);
+	}
+	/* brown background black text */
+	.accent-section {
+		background: var(--brown);
+		color: var(--black);
+	}
+	.accent-btn {
+		background: var(--brown);
+		color: white;
+	}
+	/* black background white text */
+	.dark-section {
+		background: var(--black);
+		color: var(--white);
+	}
+
+	.grey-text {
+		color: var(--grey);
+	}
+
+	.container {
+		--max-width: 1110px;
+		--padding: 2rem;
+		width: min(var(--max-width), 100% - var(--padding) * 2);
+		margin-inline: auto;
+	}
+
+	.spacing-m {
+		margin-bottom: 0.7em;
+	}
+
+	.spacing-s {
+		margin-bottom: 0.5em;
+	}
+
+	a {
+		display: inline-block;
+		text-decoration: none;
+	}
+
+	.dark-icons {
+		filter: invert(1);
+	}
+
+	.padding-xxl {
+		padding-block: calc(var(--padding-xl) * 2);
+	}
+
+	.btn, .icon {
+		padding: 1em 1.2em;
+	}
+
+	.btn-icon {
+		display: flex;
+	}
+
+	@media (min-width: 50em) {
+		--padding: 4rem;
+	}
+</style>

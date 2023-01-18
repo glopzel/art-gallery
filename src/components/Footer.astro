@@ -1,0 +1,72 @@
+---
+// import '../../public/assets/icons'
+// import { Image } from '@astrojs/image/components';
+import twitter from '../assets/icons/icon-twitter.svg';
+import facebook from '../assets/icons/icon-facebook.svg';
+import instagram from '../assets/icons/icon-instagram.svg';
+
+export interface Props {
+    classStyle: string;
+    iconsClass: string;
+    logo: any;
+}
+
+const {classStyle, iconsClass, logo} = Astro.props
+---
+
+<footer class={classStyle}>
+    <div id='footer-container' class="container padding-xxl">
+        <div>
+            <img src={logo} alt="">
+        </div>
+        <div>
+            <p class="body-s">
+                The Modern Art Gallery is free to all visitors and open seven days a week 
+      from 8am to 9pm. Find us at 99 King Street, Newport, USA.
+            </p>
+        </div>
+        <div id="social-links">
+            <ul>
+                <li>
+                    <a href=""><img class={iconsClass} src={facebook} alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img class={iconsClass} src={instagram} alt=""></a>
+                </li>
+                <li><a href=""><img class={iconsClass} src={twitter} alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<style>
+    #footer-container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 20% auto 20%;
+        gap: 2em;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    ul {
+        display: flex;
+        justify-content: flex-start;
+        gap: 1em;
+    }
+
+    @media (min-width: 50em) {
+        #footer-container {
+            display: grid;
+            grid-template-columns: 20% auto 20%;
+            grid-template-rows: 1fr;
+            align-items: center;
+        }
+
+        ul {
+            justify-content: flex-end;
+        }
+    }
+</style>

@@ -1,0 +1,116 @@
+---
+import desktopImg from "../assets/desktop/image-hero.jpg";
+import arrow from "../assets/icons/icon-arrow-right.svg";
+---
+
+<main>
+  <div id="main-div" class="container">
+    <div id="hero">
+      <section>
+        <h1 class="heading-xl">Modern Art Gallery</h1>
+      </section>
+      <div id="hero-cta">
+        <p class="body-m grey-text spacing-m">
+          The arts in the collection of the Modern Art Gallery all started from
+          a spark of inspiration. Will these pieces inspire you? Visit us and
+          find out.
+        </p>
+        <div>
+          <button class="btn-icon">
+            <a class="btn dark-section" href="/location"> Our location</a>
+            <a class="icon accent-btn" href="/location">
+              <img src={arrow} alt="" />
+            </a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<style>
+  main {
+    background-image: url("../assets/desktop/image-hero.jpg"),
+      linear-gradient(to right, black 50%, white 50%);
+    height: 100vh;
+    background-size: auto;
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+    display: flex;
+    /* justify-content: center; */
+  }
+
+  #main-div {
+    display: flex;
+    align-items: flex-end;
+    height: 80%;
+  }
+
+  #hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto/);
+    gap: 2em;
+  }
+
+  #hero-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-self: end;
+    width: 100%;
+    /* visibility: hidden; */
+  }
+
+  /* phone */
+  @media (max-width: 699px) {
+    main {
+      background-image: url("../assets/mobile/image-hero.jpg");
+      background-position: center top;
+    }
+  }
+  /* tablet */
+  @media (min-width: 700px) and (max-width: 50em) {
+    main {
+      background-image: url("../assets/tablet/image-hero.jpg");
+      background-position: center left;
+    }
+
+    #main-div {
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    #hero {
+      width: 50%;
+    }
+  }
+
+  @media (min-width: 50em) {
+    #main-div {
+      align-items: center;
+    }
+
+    #hero-cta {
+      width: 70%;
+    }
+
+    h1 {
+      color: white;
+      mix-blend-mode: exclusion;
+      width: 85%;
+      padding-left: 1.2em;
+      /* padding: 0 1em 0 1em; */
+    }
+
+    p {
+      margin-bottom: 2em;
+    }
+
+    #hero {
+      /* display: grid; */
+      grid-template-columns: repeat(2, 1fr);
+     }
+  }
+</style>

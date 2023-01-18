@@ -1,0 +1,102 @@
+---
+import smallImg from '../assets/mobile/image-grid-1.jpg';
+import midImg from '../assets/desktop/image-grid-3.jpg';
+import largImg from '../assets/mobile/image-grid-2.jpg';
+---
+
+<section>
+    <div class="container pic-grid padding-xxl">
+        <div class="text-container" id='div1'>
+            <h2 class="heading-l spacing-s">Your day at the gallery</h2>
+            <p class="body-m">Wander through our distinct collections and find new insights about 
+            our artists. Dive into the details of their creative process.</p>
+        </div>
+        <div class="background-general" id='div2' aria-label="">
+            <img src={midImg} alt="" style="visibility: hidden">
+        </div>
+        <div class="background-general" id='div3'>
+            <img src={largImg} alt="" style="visibility: hidden">
+        </div>
+        <div class="background-general" id='div4'>
+            <img src={smallImg} alt="" style="visibility: hidden">
+        </div>
+        <div class="text-container dark-section" id='div5'>
+            <h3 class="heading-l spacing-s">Come &amp; be inspired</h3>
+            <p class="body-m">We’re excited to welcome you to our gallery and see how our collections 
+                influence you</p>
+        </div>
+        <div></div>
+    </div>
+</section>
+
+<style>
+    .pic-grid {
+        display: grid;
+        grid-template-columns: 1;
+        grid-template-rows: repeat(5, auto);
+        gap: 2em;
+    }
+
+    .background-general {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    #div2 {
+        background-image: url('../assets/mobile/image-grid-1.jpg');
+    }
+
+    #div1 {
+        grid-row: 2/3;
+    }
+
+    #div3 {
+        background-image: url('../assets/mobile/image-grid-2.jpg');
+    }
+
+    #div4 {
+        background-image: url('../assets/desktop/image-grid-3.jpg');
+    }
+
+    #div5 {
+        padding: 2em;
+    }
+
+    @media (min-width: 50em) {
+        .pic-grid {
+        display: grid;
+        grid-template-columns: 1fr 0.2fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        /* grid-column-gap: 20px; */
+        /* grid-row-gap: 20px; */
+        gap: 2em;
+    }
+
+    .background-general {
+        background-size: cover;
+    }
+
+    #div1 { 
+        grid-area: 1 / 1 / 2 / 2; 
+    }
+    #div2 { 
+        background-image: url('../assets/desktop/image-grid-1.jpg');
+        grid-area: 1 / 2 / 2 / 4; 
+    }
+    #div3 { 
+        grid-area: 2 / 1 / 4 / 3; 
+        background-image: url('../assets/desktop/image-grid-2.jpg');
+        border: 1px solid red;
+    }
+    #div4 { 
+        grid-area: 2 / 3 / 3 / 4; 
+        background-image: url('../assets/desktop/image-grid-3.jpg');
+        border: 1px solid rgb(0, 255, 162);
+    }
+    #div5 { 
+        grid-area: 3 / 3 / 4 / 4; 
+        padding: 2em;
+    }
+    }
+</style>
