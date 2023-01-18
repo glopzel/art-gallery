@@ -137,6 +137,10 @@ const { title } = Astro.props;
 	}
 
 	@media (min-width: 50em) {
-		--padding: 4rem;
+		.container {
+			--max-width: 1110px;
+			--padding: 4rem;
+			width: min(var(--max-width), 100% - var(--padding) * 2);
+		}
 	}
 </style>
