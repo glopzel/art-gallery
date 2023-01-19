@@ -1,14 +1,8 @@
 ---
-// import '../../public/assets/icons'
-// import { Image } from '@astrojs/image/components';
-import twitter from '../assets/icons/icon-twitter.svg';
-import facebook from '../assets/icons/icon-facebook.svg';
-import instagram from '../assets/icons/icon-instagram.svg';
-
 export interface Props {
     classStyle: string;
     iconsClass: string;
-    logo: any;
+    logo: string;
 }
 
 const {classStyle, iconsClass, logo} = Astro.props
@@ -28,12 +22,12 @@ const {classStyle, iconsClass, logo} = Astro.props
         <div id="social-links">
             <ul>
                 <li>
-                    <a href=""><img class={iconsClass} src={facebook} alt=""></a>
+                    <a href=""><img class={iconsClass} src='https://ik.imagekit.io/a8p7pl7hs/gallery/icon-instagram_XDU5wnRIj.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1674148292581' alt=""></a>
                 </li>
                 <li>
-                    <a href=""><img class={iconsClass} src={instagram} alt=""></a>
+                    <a href=""><img class={iconsClass} src='https://ik.imagekit.io/a8p7pl7hs/gallery/icon-facebook_0pW0ZdiiG.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1674148291937' alt=""></a>
                 </li>
-                <li><a href=""><img class={iconsClass} src={twitter} alt=""></a></li>
+                <li><a href=""><img class={iconsClass} src='https://ik.imagekit.io/a8p7pl7hs/gallery/icon-twitter_aC8Y6xgmx.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1674148291954' alt=""></a></li>
             </ul>
         </div>
     </div>
