@@ -1,26 +1,4 @@
-## 🚀 Project Structure :
-
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Footer.astro
-|   |   └── Hero.astro
-|   |   └── Location.astro
-|   |   └── PhotoGrid.astro
-│   ├── layouts/
-│   │   └── Layout.astro (global styles)
-│   ├── pages/
-|   |   ├── location/
-|   |   |    └── index.astro
-|   |   └──index.astro
-|   └── styles /
-|       └──global.css (reset)
-└── package.json
-```
-
+## 🚀 Project
 
 ## 🧞 Commands
 
