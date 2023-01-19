@@ -30,6 +30,7 @@ const { title } = Astro.props;
 		--grey: rgb(68, 68, 68);
 		--white: rgb(255, 255, 255);
 		--padding-xl: 2em;
+		--separation-s: 1em;
 		/* --headings-font: ;
 		--body-font: ; */
 	}
@@ -102,7 +103,7 @@ const { title } = Astro.props;
 	.container {
 		--max-width: 1110px;
 		--padding: 2rem;
-		width: min(var(--max-width), 100% - var(--padding) * 2);
+		width: min(var(--max-width), 100% - 2rem * 2);
 		margin-inline: auto;
 	}
 
@@ -127,19 +128,40 @@ const { title } = Astro.props;
 		padding-block: calc(var(--padding-xl) * 2);
 	}
 
-	.btn, .icon {
+	/* .btn, .icon {
 		padding: 1em 1.2em;
+	} */
+
+	#hero-nav, #location-nav {
+		display: flex;
+		align-items: center;
 	}
 
-	.btn-icon {
-		display: flex;
+	#hero-nav {	
+		padding-left: var(--separation-s);
+	}
+
+	#hero-nav img {
+		margin-left: var(--separation-s);
+	}
+
+	#hero-nav img, #location-nav img {
+		padding: var(--separation-s) 1.2em;
+	}
+
+	#location-nav {
+		padding-right: var(--separation-s);
+	}
+
+	#location-nav img {
+		margin-right: var(--separation-s);
 	}
 
 	@media (min-width: 50em) {
 		.container {
 			--max-width: 1110px;
 			--padding: 4rem;
-			width: min(var(--max-width), 100% - var(--padding) * 2);
+			width: min(var(--max-width), 100% - 4rem * 2);
 		}
 	}
 </style>
