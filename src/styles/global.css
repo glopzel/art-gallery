@@ -52,6 +52,7 @@ h6 {
 
 h1, h2, h3 {
   font-family: 'Big Shoulders Display', cursive;
+  text-transform: uppercase;
 }
 
 p, a, span {

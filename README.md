@@ -6,11 +6,18 @@
 │   └── favicon.svg
 ├── src/
 │   ├── components/
-│   │   └── Card.astro
+│   │   └── Footer.astro
+|   |   └── Hero.astro
+|   |   └── Location.astro
+|   |   └── PhotoGrid.astro
 │   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
+│   │   └── Layout.astro (global styles)
+│   ├── pages/
+|   |   ├── location/
+|   |   |    └── index.astro
+|   |   └──index.astro
+|   └── styles /
+|       └──global.css (reset)
 └── package.json
 ```
 

@@ -6,40 +6,37 @@ import largImg from "../assets/mobile/image-grid-2.jpg";
 
 <section>
   <div class="container pic-grid padding-xxl">
-    <div class="text-container" id="div1">
-      <h2 class="heading-l spacing-s">Your day at the gallery</h2>
-      <p class="body-m">
-        Wander through our distinct collections and find new insights about our
-        artists. Dive into the details of their creative process.
-      </p>
+    <div id="img-text" class="grid-general">
+      <div class="text-container" id="div1">
+        <h2 class="heading-l spacing-s">Your day at the gallery</h2>
+        <p class="body-m">
+          Wander through our distinct collections and find new insights about
+          our artists. Dive into the details of their creative process.
+        </p>
+      </div>
+      <div class="background-general" id="div2" aria-label="">
+        <img src={midImg} alt="" />
+      </div>
     </div>
-    <div class="background-general" id="div2" aria-label="">
-      <img src={midImg} alt="" />
+    <div class="grid-general" id="extra-images">
+      <div class="background-general" id="div3">
+        <img src={largImg} alt="" />
+      </div>
+      <div class="background-general" id="div4">
+        <img src={smallImg} alt="" />
+      </div>
+      <div class="text-container dark-section" id="div5">
+        <h3 class="heading-l spacing-s">Come &amp; be inspired</h3>
+        <p class="body-m">
+          We’re excited to welcome you to our gallery and see how our
+          collections influence you
+        </p>
+      </div>
     </div>
-    <div class="background-general" id="div3">
-      <img src={largImg} alt="" />
-    </div>
-    <div class="background-general" id="div4">
-      <img src={smallImg} alt="" />
-    </div>
-    <div class="text-container dark-section" id="div5">
-      <h3 class="heading-l spacing-s">Come &amp; be inspired</h3>
-      <p class="body-m">
-        We’re excited to welcome you to our gallery and see how our collections
-        influence you
-      </p>
-    </div>
-    <div></div>
   </div>
 </section>
 
 <style>
-  .pic-grid {
-    display: flex;
-    gap: 1em;
-    flex-direction: column;
-  }
-
   .background-general {
     background-repeat: no-repeat;
     background-position: center;
@@ -50,19 +47,35 @@ import largImg from "../assets/mobile/image-grid-2.jpg";
     margin-inline: auto;
   }
 
+  .grid-general > * {
+      margin: 1em;
+  }
+
   #div5 {
-    padding: 2em;
+    padding: 1em;
+  }
+
+  @media (max-width: 599px) {
+    #img-text {
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
 
   @media (min-width: 600px) {
-    .pic-grid {
+    .grid-general {
       display: grid;
       grid-template-columns: 1fr 0.2fr 1fr;
-      grid-template-rows: repeat(3, 1fr);
+      gap: 0.5em;
+      margin: 0.5em;
     }
 
     .background-general {
       background-size: cover;
+    }
+
+    #extra-images {
+      grid-template-rows: 1fr 1fr;
     }
 
     #div2 img,
@@ -74,33 +87,35 @@ import largImg from "../assets/mobile/image-grid-2.jpg";
     #div1 {
       grid-area: 1 / 1 / 2 / 2;
     }
+
     #div2 {
       background-image: url("../assets/tablet/image-grid-1.jpg");
       grid-area: 1 / 2 / 2 / 4;
     }
+
     #div3 {
+      grid-area: 1 / 1 / 3 / 3;
       background-image: url("../assets/tablet/image-grid-2.jpg");
-      grid-area: 2 / 1 / 4 / 3;
     }
     #div4 {
+      grid-area: 1 / 3 / 2 / 4;
       background-image: url("../assets/tablet/image-grid-3.jpg");
-      grid-area: 2 / 3 / 3 / 4;
     }
     #div5 {
-      grid-area: 3 / 3 / 4 / 4;
+      grid-area: 2 / 3 / 3 / 4;
     }
   }
 
   @media (min-width: 50em) {
-    .pic-grid {
-      display: grid;
-      grid-template-columns: 1fr 0.2fr 1fr;
-      grid-template-rows: repeat(3, 1fr);
+    .grid-general {
+      gap: 2em;
+      margin: 2em;
     }
 
     #div2 {
       background-image: url("../assets/desktop/image-grid-1.jpg");
     }
+
     #div3 {
       background-image: url("../assets/desktop/image-grid-2.jpg");
     }
