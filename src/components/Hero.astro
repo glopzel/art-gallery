@@ -13,9 +13,7 @@
         <div>
           <button id="nav-btn">
             <a id='hero-nav' class="btn dark-section btn-icon" href="/location"> Our location <img src='https://ik.imagekit.io/a8p7pl7hs/gallery/icon-arrow-right_Fsj98Pokv.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1674148291991' class="icon accent-btn" alt="" /></a>
-            <!-- <a class="icon accent-btn" href="/location">
-              <img src={arrow} alt="" />
-            </a> -->
+
           </button>
         </div>
       </div>
@@ -38,13 +36,13 @@
   #main-div {
     display: flex;
     align-items: flex-end;
-    height: 80%;
+    height: 100%;
   }
 
   #hero {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, auto/);
+    grid-template-rows: repeat(2, auto);
     gap: 2em;
   }
 
@@ -56,14 +54,17 @@
     width: 100%;
   }
 
-  /* phone */
   @media (max-width: 699px) {
     main {
       background-image: url("https://ik.imagekit.io/a8p7pl7hs/gallery/mobile/image-hero_U3rEROYFO.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1674148099956");
       background-position: center top;
     }
+
+    #hero {
+      gap: 0;
+    }
   }
-  /* tablet */
+
   @media (min-width: 700px) and (max-width: 50em) {
     main {
       background-image: url("https://ik.imagekit.io/a8p7pl7hs/gallery/tablet/image-hero_5U0M-4271.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1674147958495");
@@ -94,7 +95,6 @@
       mix-blend-mode: exclusion;
       width: 85%;
       padding-left: 1.2em;
-      /* padding: 0 1em 0 1em; */
     }
 
     p {
