@@ -25,7 +25,7 @@ const { title } = Astro.props;
 	:root {
 		--accent: 124, 58, 237;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-		--brown: rgb(213, 150, 108);
+		--brown: #d5966c;
 		--black: rgb(21, 21, 21);
 		--grey: rgb(68, 68, 68);
 		--white: rgb(255, 255, 255);
@@ -118,10 +118,26 @@ const { title } = Astro.props;
 	a {
 		display: inline-block;
 		text-decoration: none;
+		transition: all 1ms ease-in-out;
+		font-weight: 700;
+	}
+
+	a:hover {
+		/* i get it, i should not name css variables after colors */
+		--brown: black;
+		--black: rgb(213, 150, 108);
 	}
 
 	.dark-icons {
 		filter: invert(1);
+	}
+
+	.dark-icons:hover {
+		filter: invert(0);
+	}
+
+	.light-icons:hover {
+		filter: invert(60%) sepia(72%) saturate(271%) hue-rotate(341deg) brightness(100%) contrast(86%);	
 	}
 
 	.padding-xxl {
