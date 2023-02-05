@@ -31,6 +31,9 @@ const {classStyle, iconsClass, logo} = Astro.props
             </ul>
         </div>
     </div>
+    <p class="attribution"> 
+        Coded by <a href="https://github.com/glopzel" target="_blank" rel="noopener noreferrer">Angela Lopez Zelaya</a>.
+    </p>
 </footer>
 
 <style>
@@ -49,6 +52,15 @@ const {classStyle, iconsClass, logo} = Astro.props
         display: flex;
         justify-content: flex-start;
         gap: 1em;
+    }
+
+    .attribution { 
+        font-size: 13px; 
+        text-align: center; 
+        padding-bottom: 1em;
+    }
+    .attribution a { 
+        color: hsl(228, 49%, 50%); 
     }
 
     @media (min-width: 50em) {
